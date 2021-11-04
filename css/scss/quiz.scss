@@ -280,7 +280,7 @@ main {
 		width: 178px;
 		height: 90px;
 		background: {
-			image: url(/images/pc/quiz_title.png);
+			image: url(../images/pc/quiz_title.png);
 			repeat: no-repeat;
 			position: 0 0
 		}
@@ -825,7 +825,7 @@ main {
 		width: 607px;
 		height: 58px;
 		background: {
-			image: url(/images/pc/quiz_cont_bg.png);
+			image: url(../images/pc/quiz_cont_bg.png);
 			repeat: no-repeat;
 			position: 0 0;
 		}
@@ -985,11 +985,11 @@ main {
 			cursor: pointer;
 
 			&.choice-o {
-				background-image: url(/images/pc/quiz_o.png);
+				background-image: url(../images/pc/quiz_o.png);
 			}
 
 			&.choice-x {
-				background-image: url(/images/pc/quiz_x.png);
+				background-image: url(../images/pc/quiz_x.png);
 			}
 
 		}
