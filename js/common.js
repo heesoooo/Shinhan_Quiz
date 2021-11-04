@@ -25,7 +25,7 @@ if (typeof $.fn.modal !== 'function') {
 				if (modalDialogHfix < 0) {
 					modalDialogHfix = 30;
 				}
-				modalDialog.css('margin-top', modalDialogHfix);
+				modalDialog.css('margin-top', modalDialogHfix - 100);
 				$(window).resize(function () {
 					var windowH = $(window).height();
 					var modalDialog = modal.find('.modal-content');

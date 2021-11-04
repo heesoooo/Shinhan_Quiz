@@ -682,6 +682,8 @@ main {
 	}
 
 	.modal-content {
+		left: 50%;
+		margin: 0 0 0 -80px;
 		padding: 64px 48px;
 		border: 0;
 		@include  box-sizing(border-box);
