@@ -1133,6 +1133,7 @@ main {
 
 	.chart-wrap {
 		position: relative;
+
 		figure {
 			@include position($t:50%,$l:50%);
 			margin-top: -103px;
@@ -1175,10 +1176,7 @@ main {
 			background-color: transparent;
 		}
 
-
-		
 	}
-
 
 }
 
@@ -1266,23 +1264,9 @@ main {
 		width: 100%;
 		margin: 80px auto 0;
 
-		&:before {
-			@include position($b: -9px, $r: 0);
-			content: '';
-			width: 274px;
-			min-height: 50px;
-			border-radius: 10px;
-			background: #9E672B;
-			z-index: 0;
-			transform: rotate(0);
-		}
-
+		&:before,
 		&:after {
-			width: 455px;
-			min-height: 50px;
-			left: 0;
-			right: auto;
-			transform: rotate(0);
+			content: none;
 		}
 
 	}
