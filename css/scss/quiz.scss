@@ -1270,7 +1270,7 @@ main {
 			@include position($b: -9px, $r: 0);
 			content: '';
 			width: 274px;
-			min-height: 101%;
+			min-height: 50px;
 			border-radius: 10px;
 			background: #9E672B;
 			z-index: 0;
@@ -1279,6 +1279,7 @@ main {
 
 		&:after {
 			width: 455px;
+			min-height: 50px;
 			left: 0;
 			right: auto;
 			transform: rotate(0);
