@@ -221,7 +221,9 @@
 	<script>
 
 		$(function(){
-			
+			var quizFormH = $(".quiz-form").outerHeight();
+			$(".comment-form").css("height", quizFormH);
+
 			// quiz step click 시
 			$('.quiz-step li').on("click", function(e){
 				e.preventDefault();
@@ -244,10 +246,6 @@
 				// $('.progress-container .number').text(currentComponentLength);
 				// $('.progress-container .max-number').text(componentLength);
 			});
-
-			var quizFormH = $(".quiz-form").outerHeight();
-			$(".comment-form").css("height", quizFormH);
-
 
 			$("input[type=radio], input[type=checkbox]").attr("disabled", true);
 
