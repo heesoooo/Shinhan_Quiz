@@ -1373,6 +1373,7 @@ main {
 
 		.form-inr {
 			height: 100%;
+			overflow: hidden;
 			overflow-y: auto;
 			z-index: 1;
 			@include box-sizing(border-box);
