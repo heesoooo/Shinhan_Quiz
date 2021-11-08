@@ -181,6 +181,32 @@
 		<img src="https://rebehayan3.cafe24.com/hunet/resource/img.hunet.co.kr/edu/customize/online-baeum/pc/@footer.png" alt="푸터">
 	</footer>
 	<!-- /footer -->
+
+	<script>
+		$(function(){
+			// quiz step click 시
+			$('.quiz-step li').on("click", function(e){
+				e.preventDefault();
+				var num = $(this).data('tab'),
+					bars = $(".bar-rate span");
+				//console.log(num);
+				bars.each(function (e){
+					for (i = 0; i <= bars.length; i++) {
+						$(bars[i]).removeClass("complete");
+					}
+	
+					for (i = 0; i <= num - 1; i++) {
+						$(bars[i]).addClass("complete");
+					}
+				});
+				
+				// var componentLength = $('.progress-container td').length - 1;
+				// var currentComponentLength = $('.bar-rate .complete').length;
+				// $('.progress-container .percentage').text(Math.floor((currentComponentLength / componentLength) * 100));
+				// $('.progress-container .number').text(currentComponentLength);
+				// $('.progress-container .max-number').text(componentLength);
+			});
+		});
 	</script>
 </body>
 </html>

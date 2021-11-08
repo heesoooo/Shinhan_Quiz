@@ -1185,6 +1185,7 @@ main {
 	.quiz-step  {
 		li {
 			position: relative;
+			margin-bottom: 20px;
 			
 			&:before{
 				@include position($t:50%,$l:50%);
@@ -1241,7 +1242,7 @@ main {
 
 	.quiz-s-tit3,
 	.quiz-s-tit4 {
-		@include position($t:-36px);
+		@include position($t:-36px,$l:0);
 		margin-left: 24px;
 		background-repeat: no-repeat;
 		background-position: 0 0;
@@ -1261,6 +1262,7 @@ main {
 	
 	.quiz-form-wrap {
 		@include flex(space-between);
+		align-items: flex-start;
 		width: 100%;
 		margin: 80px auto 0;
 
@@ -1277,6 +1279,7 @@ main {
 		border-radius: 10px;
 		border: 10px solid #e3c140;
 		box-shadow: 0px 4px 1px 0px #bd8626;
+		@include box-sizing(border-box);
 
 		&:before {
 			content: none;
@@ -1289,6 +1292,7 @@ main {
 
 		.form-inr {
 			padding: 0 9px 100px;
+			@include box-sizing(border-box);
 		}
 
 		.multiple {
