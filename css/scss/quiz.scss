@@ -8,9 +8,7 @@ $masterColor: #ff6c00;
 $primaryColor: #44535a;
 
 /* 반영시 지우기 :: 211025 */
-
 body {
-
 	* {
 		font-family: 'NanumBarunGothic', sans-serif;
 	}
@@ -86,7 +84,7 @@ main {
 	transition: all .2s ease-in-out;
 
 	.modal-close {
-		@include position($t:15px, $r:15px);
+		@include position($t: 15px, $r:15px);
 		width: 16px;
 		height: 15px;
 		overflow: hidden;
@@ -156,7 +154,7 @@ main {
 		text-align: center;
 
 		&::before {
-			@include position($t:-286px, $l:50%);
+			@include position($t: -286px, $l:50%);
 			margin-left: -257px;
 			content: "";
 			width: 514px;
@@ -219,7 +217,7 @@ main {
 
 		&::before,
 		&::after {
-			@include position($t:-56px);
+			@include position($t: -56px);
 			content: "";
 			width: 3px;
 			height: 54px;
@@ -261,13 +259,13 @@ main {
 		}
 
 		&::before {
-			@include position($t:0, $l:-16px);
+			@include position($t: 0, $l:-16px);
 			border-top: 16px solid transparent;
 			border-right: 16px solid $masterColor;
 		}
 
 		&::after {
-			@include position($t:0, $r:-16px);
+			@include position($t: 0, $r:-16px);
 			border-top: 16px solid transparent;
 			border-left: 16px solid $masterColor;
 		}
@@ -275,16 +273,18 @@ main {
 	}
 
 	.quiz-s-tit2 {
-		@include position($t:-80px,$l:50%);
+		@include position($t: -80px, $l:50%);
 		margin-left: -89px;
 		width: 178px;
 		height: 90px;
+
 		background: {
 			image: url(../images/pc/quiz_title.png);
 			repeat: no-repeat;
 			position: 0 0
 		}
-		font-size: 0;
+
+		font-size:0;
 	}
 
 	/* button */
@@ -312,8 +312,9 @@ main {
 			}
 
 			span {
-				@include position($t:6px, $l:8px);
+				@include position($t: 50%, $l: 50%);
 				content: "";
+				margin: -20px 0 0 -75px;
 				width: 150px;
 				height: 40px;
 				line-height: 40px;
@@ -329,7 +330,38 @@ main {
 
 		}
 
+		&.d-flex {
+			@include flex(center);
+
+			&:after {
+				content: none;
+			}
+
+			padding: 0;
+
+			.btn-quiz {
+				margin: 0 13px;
+				width: 92px;
+				height: 92px;
+				border-radius: 50%;
+			}
+
+			span {
+				margin: -34px 0 0 -34px;
+				@include flex(center);
+				align-items: center;
+				width: 68px;
+				height: 68px;
+				line-height: 1.3;
+				font-size: 16px;
+				color: #5b2714;
+				border-radius: 50%;
+			}
+
+		}
+
 	}
+
 
 	/* quiz contents */
 	.quiz-inner {
@@ -342,7 +374,7 @@ main {
 		width: 100%;
 		padding: 0px;
 
-		border : {
+		border: {
 			radius: 30px;
 			width: 4px;
 			style: solid;
@@ -426,7 +458,7 @@ main {
 
 		.cate-lst {
 			@include clearfix;
-			@include position($t:37px, $r:0);
+			@include position($t: 37px, $r:0);
 
 			li {
 				position: relative;
@@ -437,7 +469,7 @@ main {
 				letter-spacing: -.1px;
 
 				&:before {
-					@include position($t:50%, $l:-6px);
+					@include position($t: 50%, $l:-6px);
 					content: '';
 					margin-top: -1px;
 					width: 2px;
@@ -467,7 +499,7 @@ main {
 			border-radius: 50%;
 
 			em {
-				@include position($b:-27px);
+				@include position($b: -27px);
 				width: 100%;
 				font-size: 15px;
 				text-align: center;
@@ -537,7 +569,7 @@ main {
 
 	}
 
-	.q-drop-zone {
+	.drag-drop-zone {
 		@include flex(space-between);
 		margin-top: 50px;
 
@@ -547,7 +579,6 @@ main {
 			@include box-sizing(border-box);
 			padding: 0px 36px;
 			background: $white;
-
 			border: {
 				radius: 38px;
 				width: 2px;
@@ -584,7 +615,7 @@ main {
 				animation-timing-function: cubic-bezier(.895, .03, .685, .22);
 
 				&:before {
-					@include position($l:0, $t:0);
+					@include position($l: 0, $t:0);
 					width: 361px;
 					height: 434px;
 					content: '';
@@ -625,7 +656,7 @@ main {
 				animation-timing-function: cubic-bezier(.895, .03, .685, .22);
 
 				&:before {
-					@include position($l:0, $t:0);
+					@include position($l: 0, $t:0);
 					width: 361px;
 					height: 434px;
 					content: '';
@@ -688,7 +719,7 @@ main {
 		border: 0;
 		@include  box-sizing(border-box);
 
-		p  {
+		p {
 			font-size: 24px;
 			line-height: 34px;
 			letter-spacing: -1.4px;
@@ -727,13 +758,10 @@ main {
 }
 
 /* quiz step */
-.quiz-step-status {
+.quiz-step {
+	@include clearfix;
 	width: 600px;
 	margin: 50px auto 0;
-
-	.row {
-		@include clearfix;
-	}
 
 	ol {
 		margin-bottom: 16px;
@@ -771,23 +799,42 @@ main {
 		border-radius: 10px;
 		overflow: hidden;
 	}
-	
+
 	.bar-rate {
-		@include position($t:0,$l:0);
+		@include flex(space-between);
+		@include position($t: 0, $l:0);
+		width: 100%;
 		height: 19px;
-		background: #e6c140;
+
+		span {
+			flex-basis: 10%;
+			width: 0;
+
+			&.complete {
+				width: 100%;
+				height: 100%;
+				background: #e6c140;
+				-webkit-transition: all .3s;
+				-moz-transition: all .3s;
+				-o-transition: all .3s;
+				transition: all .3s;
+			}
+
+		}
+
 	}
 
-
 }
+
+/* 문제 풀기 */
 .quiz-form-wrap {
 	position: relative;
 	width: 607px;
 	margin: 123px auto 0;
 	@include box-sizing(border-box);
-	
+
 	&::before {
-		@include position($b:-4px,$r:-2px);
+		@include position($b: -4px, $r:-2px);
 		content: '';
 		width: 100%;
 		min-height: 101%;
@@ -798,7 +845,7 @@ main {
 	}
 
 	&::after {
-		@include position($b:-9px,$r:-4px);
+		@include position($b: -9px, $r:-4px);
 		content: '';
 		width: 100%;
 		min-height: 101%;
@@ -816,24 +863,25 @@ main {
 	width: 100%;
 	border: 10px solid #e6c140;
 	border-top: 0;
-	border-radius:0 0 10px 10px;
+	border-radius: 0 0 10px 10px;
 	@include box-sizing(border-box);
 	background: $white;
 	z-index: 1;
-	
+
 	&::before {
-		@include position($t:-58px,$l:-10px);
+		@include position($t: -58px, $l:-10px);
 		content: '';
 		width: 607px;
 		height: 58px;
+
 		background: {
 			image: url(../images/pc/quiz_cont_bg.png);
 			repeat: no-repeat;
 			position: 0 0;
 		}
-		
+
 	}
-	
+
 	.form-inr {
 		position: relative;
 		padding: 15px 38px 100px;
@@ -841,7 +889,7 @@ main {
 		background: linear-gradient(-40deg, #f9f9f9 50%, #fff 50%);
 
 		&::before {
-			@include position($l:0,$b:0);
+			@include position($l: 0, $b:0);
 			content: '';
 			width: 0px;
 			height: 0px;
@@ -850,7 +898,7 @@ main {
 		}
 
 		&::after {
-			@include position($l:0,$b:0);
+			@include position($l: 0, $b:0);
 			content: '';
 			width: 0px;
 			height: 0px;
@@ -874,7 +922,7 @@ main {
 			letter-spacing: -.5px;
 
 			&::before {
-				@include position($l:-3px,$t:0);
+				@include position($l: -3px, $t:0);
 				content: '/';
 			}
 
@@ -902,16 +950,17 @@ main {
 
 	input[type="radio"],
 	input[type="checkbox"] {
-		position:absolute;
-		width:1px;
-		height:1px;
-		padding:0;
-		margin:-1px;
-		overflow:hidden;
-		clip:rect(0,0,0,0);
-		border:0;
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		padding: 0;
+		margin: -1px;
+		overflow: hidden;
+		clip: rect(0, 0, 0, 0);
+		border: 0;
 	}
 
+	/* 객관식 */
 	.multiple {
 		@include clearfix;
 		counter-reset: leaderboard;
@@ -926,7 +975,7 @@ main {
 
 			&::before {
 				content: counter(leaderboard);
-				@include position($t:50%,$l:24px);
+				@include position($t: 50%, $l:24px);
 				margin-top: -25px;
 				width: 50px;
 				height: 50px;
@@ -941,7 +990,7 @@ main {
 				z-index: 2;
 				@include box-sizing(border-box);
 			}
-			
+
 			label {
 				width: 100%;
 				height: 100%;
@@ -956,7 +1005,7 @@ main {
 			}
 
 			input[type="radio"]:checked,
-			input[type="checkbox"]:checked{
+			input[type="checkbox"]:checked {
 				+ label {
 					font-weight: bold;
 					background: #f4cd44;
@@ -967,22 +1016,25 @@ main {
 			}
 
 		}
-		
+
 	}
 
+	/* 주관식 */
 	.ox-quiz {
 		@include flex(space-between);
-		
+
 		label {
 			display: block;
 			width: 224px;
 			height: 224px;
 			font-size: 0;
+
 			background: {
 				color: #c1bfbf;
 				repeat: no-repeat;
 				position: 50% 50%;
 			}
+
 			border-radius: 50%;
 			cursor: pointer;
 
@@ -995,10 +1047,9 @@ main {
 			}
 
 		}
-		
-		input[type="radio"]:checked,
-		input[type="checkbox"]:checked{
 
+		input[type="radio"]:checked,
+		input[type="checkbox"]:checked {
 			+ label {
 				transition: ease-in-out .2s;
 			}
@@ -1006,9 +1057,419 @@ main {
 			+ .choice-o {
 				background-color: #12a76b;
 			}
-			
+
 			+ .choice-x {
 				background-color: #c2164b;
+			}
+
+		}
+
+	}
+
+}
+
+/* 결과페이지 */
+.q-result {
+	padding: 23px 60px 45px;
+
+	.tit {
+		font-size: 25px;
+		line-height: 32px;
+		text-align: center;
+		color: #4b4a4a;
+
+		span {
+			color: #ff9100;
+		}
+
+	}
+
+	.form-inr {
+		padding : 30px 0 50px;
+	}
+
+	.draggble {
+		text-align: center;
+
+		figure {
+			margin: -85px 0 15px 0;
+		}
+
+	}
+
+	.check-result {
+		@include flex(center);
+
+		.rate {
+			width: 120px;
+			margin-right: 45px;
+			text-align: center;
+
+			span {
+				display: block;
+				font-size: 21px;
+				font-weight: bold;
+				line-height: 30px;
+				letter-spacing: -.6px;
+				color: #4b4a4a;
+
+				em {
+					font-style: normal;
+					font-weight: bold;
+					color: #ff9100;
+				}
+
+				&:last-child {
+					padding-top: 12px;
+					margin-top: 5px;
+					border-top: 1px solid #4b4a4a;
+				}
+
+			}
+
+		}
+
+	}
+
+	.chart-wrap {
+		position: relative;
+		figure {
+			@include position($t:50%,$l:50%);
+			margin-top: -103px;
+			margin-left: -103px;
+			content: '';
+			display: block;
+			width: 206px;
+			height: 206px;
+			z-index: 0;
+			border-radius: 50%;
+			background-position: 50% 50%;
+			background-repeat: no-repeat;
+			box-sizing: border-box;
+		}
+
+		.result01 {
+			background-image: url(../images/pc/img_result01.png);
+		}
+		
+		.result02 {
+			background-image: url(../images/pc/img_result02.png);
+		}
+		
+		.result03 {
+			background-image: url(../images/pc/img_result03.png);
+		}
+		
+		.result04 {
+			background-image: url(../images/pc/img_result04.png);
+		}
+
+	}
+
+	.donut-chart {
+		width: 286px;
+		height: 286px;
+
+		.highcharts-background{
+			fill : transparent;
+			background-color: transparent;
+		}
+
+
+		
+	}
+
+
+}
+
+/* 퀴즈 해설 */
+.q-commentary {
+	.quiz-step  {
+		li {
+			position: relative;
+			
+			&:before{
+				@include position($t:50%,$l:50%);
+				content: '';
+				background: {
+					repeat: no-repeat;
+					position: 0 0;
+				}
+				z-index: 99;
+				cursor: pointer;
+			}
+
+			&.correct {
+				&:before {
+					margin-top: -27px;
+					margin-left: -24px;
+					width: 48px;
+					height: 54px;
+					background-image: url(../images/pc/q_correct.png);
+				}
+
+			}
+
+			&.in-correct {
+				&:before {
+					margin-top: -25.5px;
+					margin-left: -20.5px;
+					width: 41px;
+					height: 51px;
+					background-image: url(../images/pc/q_incorrect.png);
+				}
+
+			}
+
+		}
+
+		.bar-rate {
+			span {
+				width: 0;
+
+				&.complete {
+					width:100%;
+					-webkit-transition: width 1s ease-in;
+					-moz-transition: width 1s ease-in;
+					-o-transition: width 1s ease-in;
+					transition: width 1s ease-in;
+				}
+
+			}
+
+		}
+
+	}
+
+	.quiz-s-tit3,
+	.quiz-s-tit4 {
+		@include position($t:-36px);
+		margin-left: 24px;
+		background-repeat: no-repeat;
+		background-position: 0 0;
+		font-size: 0;
+		width: 126px;
+		height: 64px;
+		z-index: 100;
+	}
+
+	.quiz-s-tit3 {
+		background-image: url(../images/pc/comment_tit01.png);
+	}
+
+	.quiz-s-tit4 {
+		background-image: url(../images/pc/comment_tit02.png);
+	}
+	
+	.quiz-form-wrap {
+		@include flex(space-between);
+		width: 100%;
+		margin: 80px auto 0;
+
+		&:before {
+			@include position($b: -9px, $r: 0);
+			content: '';
+			width: 274px;
+			min-height: 101%;
+			border-radius: 10px;
+			background: #9E672B;
+			z-index: 0;
+			transform: rotate(0);
+		}
+
+		&:after {
+			width: 455px;
+			left: 0;
+			right: auto;
+			transform: rotate(0);
+		}
+
+	}
+	
+	.quiz-form {
+		width: 455px;
+		padding: 60px 0 0;
+		border-radius: 10px;
+		border: 10px solid #e3c140;
+		box-shadow: 0px 4px 1px 0px #bd8626;
+
+		&:before {
+			content: none;
+		}
+
+		.ques-tit {
+			padding-left: 12px;
+			text-align: left;
+		}
+
+		.form-inr {
+			padding: 0 9px 100px;
+		}
+
+		.multiple {
+			li {
+				label{
+					padding: 9px 28px 9px 64px;
+					font-size: 16px;
+					line-height: 19px;
+					cursor: default;
+				}
+
+				&:before {
+					margin-top:-20px;
+					left: 16px;
+					width: 40px;
+					height: 40px;
+					font-size: 27px;
+					line-height: 40px;
+				}
+
+				&.checked {
+					label {
+						font-weight: bold;
+						background: #f4cd44;
+						color: $white;
+					}
+
+				}
+
+			}
+
+		}
+
+		.ox-quiz {
+			padding: 0 20px;
+
+			label {
+				width: 172px;
+				height: 172px;
+				background-size: 120px;
+				cursor: default;
+			}
+
+			.checked {
+				label {
+					transition: ease-in-out .2s;
+					
+					&.choice-o {
+						background-color: #12a76b;
+					}
+		
+					&.choice-x {
+						background-color: #c2164b;
+					}
+
+				}
+	
+			}
+
+		}
+
+	}
+
+	.comment-form {
+		position: relative;
+		padding: 60px 20px 35px;
+		width: 274px;
+		font-size: 16px;
+		font-weight: bold;
+		line-height: 24px;
+		letter-spacing: -.5px;
+		color: #4b4a4a;
+		border: 10px solid #e6c140;
+		border-radius: 10px;
+		@include box-sizing(border-box);
+		background: $white;
+		box-shadow: 0px 4px 1px 0px #bd8626;
+
+		.form-inr {
+			height: 100%;
+			overflow-y: auto;
+			z-index: 1;
+			@include box-sizing(border-box);
+		}
+		
+		.answer-box {
+			margin-bottom: 35px;
+		}
+
+	}
+
+	
+	.paging-wrap {
+		@include clearfix;
+		margin-top: 30px;
+
+		.back-paging {
+			float: left;
+			margin-right: 145px;
+			font-size: 18px;
+			font-weight: bold;
+			letter-spacing: -.5px;
+			
+			a {
+				display: block;
+				color: #9e672b;
+			}
+
+			span {
+				margin-right: 8px;
+				@include inline-block-box($vertical-align: middle);
+				width: 28px;
+				height: 32px;
+				background : {
+					image: url(../images/pc/q_page_back.png);
+					repeat: no-repeat;
+					position: 0 0
+				}
+
+			}
+
+		}
+
+		.quiz-paging {
+			span {
+				position: relative;
+				padding: 0 6px;
+				font-size: 16px;
+				font-weight: bold;
+				color: #9e672b;
+				letter-spacing: -.5px;
+	
+				&::before {
+					@include position($l: -3px, $t:0);
+					content: '/';
+				}
+	
+				&.current-idx {
+					&:before {
+						content: none;
+					}
+	
+				}
+	
+			}
+
+			.prev,
+			.next {
+				@include inline-block-box($vertical-align: middle);
+				width: 28px;
+				height: 31px;
+				background : {
+					repeat: no-repeat;
+					position: 0 0;
+				};
+				font-size: 0;
+			}
+
+			.prev {
+				margin-right: 12px;
+				background-image: url(../images/pc/q_page_prev.png);
+			}
+
+			.next {
+				margin-left: 12px;
+				background-image: url(../images/pc/q_page_next.png);
 			}
 
 		}
