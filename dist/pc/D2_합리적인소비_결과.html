@@ -5,7 +5,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>D2 합리적인소비 결과</title>
-	<link rel="stylesheet" href="../css/quiz.min.css">
+	<link rel="stylesheet" href="../../css/shinhan-quiz.min.css">
 </head>
 <body>
 	<!-- header -->
@@ -175,13 +175,23 @@
 
 		$(function() {
 			var data = [{
-				//name: '10%',
+				name: "오답",
 				y: 50,
-				color: '#e6c140'
-			}, {
-				//name: '90%',
+				color: '#463b39',
+				dataLabels: {
+					color: '#fff',
+					stroke: '#fff',
+					fill: '#fff',
+				}
+			},{
+				name: "정답",
 				y: 50,
-				color: '#595959'
+				color: '#e6c140',
+				dataLabels: {
+					color: '#463b39',
+					stroke: '#463b39',
+					fill: '#463b39'
+				}
 			}];
 			var start = 20;
 			var series = [];
@@ -190,24 +200,28 @@
 				series.push({
 					name:'',
 					type: 'pie',
-					innerSize: '80%',
-					size: 260,
-					borderWidth: 1,
-					borderColor: '#4b4a4a',
+					innerSize: '100%',
+					size: 230,
+					borderWidth: 30,
+					borderColor: null,
+					cursor: 'pointer',
+					zMin: 0,
 
 					yAxis: {
 						max: 100
 					},
 					
 					dataLabels: {
-						distance: data[i].y > 20 ? -30 : 30,
+						//distance: data[i].y > 20 ? -30 : 30,
+						//distance: -3,
+						y: -15,
 						borderWidth: 0,
-						format: '{point.percentage} %',
-						color: '#463b39',
-						stroke: '#463b39',
+						format: '{point.y:.f}%',
 						borderWidth: 0,
+						padding: 5,
 						style : {
-							fontSize: '15px'
+							fontSize: '14px',
+							fontWeight: 'bold'
 						}
 					},
 					startAngle: start,

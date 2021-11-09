@@ -4,8 +4,8 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>C_O 퀴즈응시</title>
-	<link rel="stylesheet" href="../css/quiz.min.css">
+	<title>C_K 퀴즈응시</title>
+	<link rel="stylesheet" href="../../css/shinhan-quiz.min.css">
 </head>
 <body>
 	<!-- header -->
@@ -37,7 +37,6 @@
 					<h3 class="quiz-tit">
 						당신의 개인정보는 얼마나 안전한가요?
 					</h3>
-				
 					<!-- quiz step -->
 					<div class="quiz-step">
 						<div class="col">
@@ -99,7 +98,6 @@
 						</div>
 					</div>
 					<!-- /quiz step -->
-
 					<div class="quiz-form-wrap">
 						<div class="quiz-form">
 							<h4 class="quiz-s-tit2">QUIZ</h4>
@@ -116,18 +114,56 @@
 								</h5>
 								<!-- /tit -->
 								
-								<!-- OX 퀴즈 -->
-								<ol class="ox-quiz">
+								<!-- 객관식 -->
+								<!-- 답이 1개인 경우 :: input radio -->
+								<ol class="multiple">
 									<li>
-										<input id="exam-1" type="radio" name="quiz-02" value="exam-1" checked>
-										<label for="exam-1" class="choice-o">o</label>
+										<input id="exam-1" type="radio" name="quiz-01" value="exam-1">
+										<label for="exam-1">게임 아이디 비밀번호는 주기적으로 변경할 시 분실의 위험이 있으므로 한번 정한 비밀번호는 되도록 변경하지 않는다.</label>
 									</li>
 									<li>
-										<input id="exam-2" type="radio" name="quiz-02" value="exam-2">
-										<label for="exam-2" class="choice-x">x</label>
+										<input id="exam-2" type="radio" name="quiz-01" value="exam-2" checked>
+										<label for="exam-2">게임 아이디 비밀번호는 주기적으로 변경할 시 분실의 위험이 있으므로 한번 정한 비밀번호는 되도록 변경하지 않는다.</label>
+									</li>
+									<li>
+										<input id="exam-3" type="radio" name="quiz-01" value="exam-3">
+										<label for="exam-3">게임 아이디 비밀번호는 주기적으로 변경할 시 분실의 위험이 있으므로 한번 정한 비밀번호는 되도록 변경하지 않는다.</label>
+									</li>
+									<li>
+										<input id="exam-4" type="radio" name="quiz-01" value="exam-4">
+										<label for="exam-4">게임 아이디 비밀번호는 주기적으로 변경할 시 분실의 위험이 있으므로 한번 정한 비밀번호는 되도록 변경하지 않는다.</label>
+									</li>
+									<li>
+										<input id="exam-5" type="radio" name="quiz-01" value="exam-5">
+										<label for="exam-5">게임 아이디 비밀번호는 주기적으로 변경할 시 분실의 위험이 있으므로 한번 정한 비밀번호는 되도록 변경하지 않는다.</label>
 									</li>
 								</ol>
-								<!-- /OX 퀴즈 -->
+								<!-- / -->
+
+								<!-- 답이 여러개 인 경우 :: input checkbox -->
+								<!-- <ol class="multiple">
+									<li>
+										<input id="exam-1" type="checkbox" name="quiz-01" value="exam-1">
+										<label for="exam-1">게임 아이디 비밀번호는 주기적으로 변경할 시 분실의 위험이 있으므로 한번 정한 비밀번호는 되도록 변경하지 않는다.</label>
+									</li>
+									<li>
+										<input id="exam-2" type="checkbox" name="quiz-01" value="exam-2" checked>
+										<label for="exam-2">게임 아이디 비밀번호는 주기적으로 변경할 시 분실의 위험이 있으므로 한번 정한 비밀번호는 되도록 변경하지 않는다.</label>
+									</li>
+									<li>
+										<input id="exam-3" type="checkbox" name="quiz-01" value="exam-3">
+										<label for="exam-3">게임 아이디 비밀번호는 주기적으로 변경할 시 분실의 위험이 있으므로 한번 정한 비밀번호는 되도록 변경하지 않는다.</label>
+									</li>
+									<li>
+										<input id="exam-4" type="checkbox" name="quiz-01" value="exam-4">
+										<label for="exam-4">게임 아이디 비밀번호는 주기적으로 변경할 시 분실의 위험이 있으므로 한번 정한 비밀번호는 되도록 변경하지 않는다.</label>
+									</li>
+									<li>
+										<input id="exam-5" type="checkbox" name="quiz-01" value="exam-5">
+										<label for="exam-5">게임 아이디 비밀번호는 주기적으로 변경할 시 분실의 위험이 있으므로 한번 정한 비밀번호는 되도록 변경하지 않는다.</label>
+									</li>
+								</ol> -->
+								<!-- /객관식 -->
 							</div>
 						</div>
 					</div>
@@ -135,8 +171,9 @@
 				<!-- /inner -->
 			</div>
 			<!-- /Quiz -->
+
 		</div>
-		<!-- /contents -->
+		<!-- /contents -->	
 	</main>
 
 	<!-- footer -->
@@ -144,5 +181,32 @@
 		<img src="https://rebehayan3.cafe24.com/hunet/resource/img.hunet.co.kr/edu/customize/online-baeum/pc/@footer.png" alt="푸터">
 	</footer>
 	<!-- /footer -->
+
+	<script>
+		$(function(){
+			// quiz step click 시
+			$('.quiz-step li').on("click", function(e){
+				e.preventDefault();
+				var num = $(this).data('tab'),
+					bars = $(".bar-rate span");
+				//console.log(num);
+				bars.each(function (e){
+					for (i = 0; i <= bars.length; i++) {
+						$(bars[i]).removeClass("complete");
+					}
+	
+					for (i = 0; i <= num - 1; i++) {
+						$(bars[i]).addClass("complete");
+					}
+				});
+				
+				// var componentLength = $('.progress-container td').length - 1;
+				// var currentComponentLength = $('.bar-rate .complete').length;
+				// $('.progress-container .percentage').text(Math.floor((currentComponentLength / componentLength) * 100));
+				// $('.progress-container .number').text(currentComponentLength);
+				// $('.progress-container .max-number').text(componentLength);
+			});
+		});
+	</script>
 </body>
 </html>

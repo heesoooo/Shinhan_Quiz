@@ -1133,11 +1133,34 @@ main {
 
 	.chart-wrap {
 		position: relative;
+		
+		&:before,
+		&:after {
+			@include position($l:50%,$t:50%);
+			content: '';
+			border-radius: 50%;
+			border:1px solid #463b39;
+			@include box-sizing(border-box);
+		}
+
+		&:before {
+			margin-top: -133.5px;
+			margin-left: -131px;
+			width: 262px;
+			height: 262px;
+		}
+
+		&:after{
+			margin-top: -101.5px;
+			margin-left: -99.5px;
+			width: 200px;
+			height: 200px;
+		}
 
 		figure {
 			@include position($t:50%,$l:50%);
-			margin-top: -103px;
-			margin-left: -103px;
+			margin-top: -105px;
+			margin-left: -104px;
 			content: '';
 			display: block;
 			width: 206px;

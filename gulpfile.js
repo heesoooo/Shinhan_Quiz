@@ -3,6 +3,8 @@ const gulp = require('gulp'),
 	sass = require('gulp-sass'),
 	cssnano = require('gulp-cssnano'),
 	rename = require('gulp-rename'),
+	fileinclude = require('gulp-file-include'),
+	connect = require('gulp-connect'),
 	browserSync = require('browser-sync').create(),
 	reload = browserSync.reload;
 
@@ -27,6 +29,16 @@ function cssTask() {
 		.pipe(gulp.dest([SRC.CSS]));
 }
 
+function htmlInclude() {
+	return gulp.src(['html/**/*.html'])
+	.pipe(fileinclude({
+		prefix: '@@',
+		basepath: '@file',
+	}))
+	.pipe(connect.reload())
+	.pipe(gulp.dest(['dist']));
+}
+
 // .on('change', reload); ->모든브라우저에 변경사항이 통보된다.
 // Streams는 Browsersync에서 지원
 function watchTask() {
@@ -45,10 +57,11 @@ function serve() {
 }
 
 // series는 순서대로, parallel는 동시실행
-const build = gulp.series(cleanCss, gulp.parallel(cssTask));
+const build = gulp.series(cleanCss, gulp.parallel(cssTask, htmlInclude));
 
 exports.cleanCss = cleanCss;
 exports.cssTask = cssTask;
+exports.htmlInclude = htmlInclude;
 exports.build = build;
 exports.watchTask = watchTask;
 exports.serve = serve;
