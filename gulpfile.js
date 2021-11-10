@@ -43,6 +43,7 @@ function htmlInclude() {
 // Streams는 Browsersync에서 지원
 function watchTask() {
 	gulp.watch(SRC.SCSS, gulp.series(cleanCss, cssTask)).on('change', reload);
+	gulp.watch('html/**/*.html', gulp.series(htmlInclude)).on('change', reload);
 }
 
 // workSheet파일 생성 및 실행
