@@ -26,5 +26,8 @@
   },
   "browserslist": [
     "last 2 versions"
-  ]
+  ],
+  "dependencies": {
+    "swiper": "^7.3.0"
+  }
 }

@@ -96,99 +96,20 @@
 	<script src="https://code.highcharts.com/highcharts.js"></script>
 	<script src="https://code.highcharts.com/modules/exporting.js"></script>
 	<script>
-		/* donut 3 */
-		// Highcharts.chart('donutChart', {
-		// 	chart: {
-		// 		type: 'pie',
-		// 	},
-		// 	title: {
-		// 		text: '',
-		// 	},
-		// 	plotOptions: {
-		// 		pie: {
-		// 			size: 270,
-		// 			dataLabels: {
-		// 				minSize: 5,
-		// 				distance: '-5%',
-		// 				enabled: true,
-		// 				format: '{point.percentage:.f}%',
-		// 				style: {
-		// 					fontSize: '14px',
-		// 					fontWeight: '500',
-		// 				},
-		// 			},
-					
-		// 		},
-
-		// 	},
-		// 	series: [{
-		// 		innerSize: '80%',
-		// 		borderColor: "#4b4a4a",
-		// 		borderWidth: 1,
-		// 		cursor: 'pointer',
-		// 		zMin: 0,
-		// 		startAngle: 10,
-
-		// 		// data: [{
-		// 		// 	y: 60,
-		// 		// 	name: '50%',
-		// 		// 	color: '#595959',
-		// 		// 	dataLabels: {
-		// 		// 		style: {
-		// 		// 			color: '#fff',
-		// 		// 			stroke: '#fff'
-		// 		// 		},
-		// 		// 		y: 15,
-		// 		// 		rotation: 5
-		// 		// 	}
-		// 		// },{
-		// 		// 	y: 40,
-		// 		// 	name: '50%',
-		// 		// 	color: '#e6c140',
-		// 		// 	dataLabels: {
-		// 		// 		zIndex: 999,
-		// 		// 		style: {
-		// 		// 			color: '#463b39',
-		// 		// 			stroke: '#463b39',
-		// 		// 		},
-		// 		// 		x: 0,
-		// 		// 		y: 15,
-		// 		// 		rotation: 5
-		// 		// 	}
-		// 		// }],
-
-		// 		data: [
-		// 			['HTML', 60],
-		// 			['CSS',  40]
-		// 		],
-		// 		colors: ['#e6c140','#595959'],
-		// 	}],
-		// 	credits: {
-		// 		enabled: false
-		// 	},
-		// 	exporting: {
-		// 		enabled: false
-		// 	}
-		// });
-
 		$(function() {
 			var data = [{
 				name: "오답",
-				y: 50,
+				y: 70,
 				color: '#463b39',
 				dataLabels: {
-					color: '#fff',
-					stroke: '#fff',
-					fill: '#fff',
+					y: 15
 				}
 			},{
 				name: "정답",
-				y: 50,
+				y: 30,
 				color: '#e6c140',
 				dataLabels: {
-					color: '#463b39',
-					stroke: '#463b39',
-					fill: '#463b39'
+					y: -15
 				}
 			}];
 			var start = 20;
@@ -200,7 +121,7 @@
 					type: 'pie',
 					innerSize: '100%',
 					size: 230,
-					borderWidth: 30,
+					borderWidth: 20,
 					borderColor: null,
 					cursor: 'pointer',
 					zMin: 0,
@@ -210,17 +131,19 @@
 					},
 					
 					dataLabels: {
-						//distance: data[i].y > 20 ? -30 : 30,
-						//distance: -3,
-						y: -15,
+						distance: data[i].y > 20 ? -30 : -30,
+						y: 15,
 						borderWidth: 0,
 						format: '{point.y:.f}%',
 						borderWidth: 0,
 						padding: 5,
 						style : {
-							fontSize: '14px',
-							fontWeight: 'bold'
-						}
+							fontSize: '16px',
+							fontWeight: 'bold',
+							color: '#463b39',
+							stroke: '#463b39',
+							fill: '#463b39'
+						},
 					},
 					startAngle: start,
 					endAngle: end,

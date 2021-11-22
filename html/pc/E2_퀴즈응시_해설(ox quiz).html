@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>E1_퀴즈응시_해설</title>
+	<title>E2_퀴즈응시_해설(OX quiz)</title>
 	@@include('../include/html-head.html')
 </head>
 <body>
@@ -37,7 +37,7 @@
 					<h3 class="quiz-tit">
 						당신의 개인정보는 얼마나 안전한가요?
 					</h3>
-				
+					
 					<!-- quiz step -->
 					<div class="quiz-step">
 						<div class="col">
@@ -53,10 +53,6 @@
 								<li class="in-correct" data-tab="8"><span>8</span></li>
 								<li class="correct" data-tab="9"><span>9</span></li>
 								<li class="correct" data-tab="10"><span>10</span></li>
-							</ol>
-						</div>
-						<div class="col">
-							<ol>
 								<li class="in-correct" data-tab="11"><span>11</span></li>
 								<li class="in-correct" data-tab="12"><span>12</span></li>
 								<li class="in-correct" data-tab="13"><span>13</span></li>
@@ -67,10 +63,6 @@
 								<li class="in-correct" data-tab="18"><span>18</span></li>
 								<li class="in-correct" data-tab="19"><span>19</span></li>
 								<li class="in-correct" data-tab="20"><span>20</span></li>
-							</ol>
-						</div>
-						<div class="col">
-							<ol>
 								<li class="correct" data-tab="21"><span>21</span></li>
 								<li class="correct" data-tab="22"><span>22</span></li>
 								<li class="correct" data-tab="23"><span>23</span></li>
@@ -94,6 +86,8 @@
 							<div class="form-inr">
 								<!-- tit -->
 								<h5 class="ques-tit">
+									<!-- 정답이면 .correct / 오답이면 .in-correct -->
+									<span class="ques-num in-correct">Q1.</span>
 									전기통신금융사기범죄에 대한 대응을 강화하기 위하여 대포통장 대여 등 행위에 대한 처벌을 강화하고, 범죄와 관련된 계좌정보의 사용 및 관리 등에 대한 처벌규정을 신설 하였습니다. 과연 이러한 내용은 어느 법령에서 정하고 있을까요?
 								</h5>
 								<!-- /tit -->
@@ -153,6 +147,20 @@
 			
 			// input box disabled
 			$("input[type=radio], input[type=checkbox]").attr("disabled", true);
+
+			// 문항개수가 10개 초과시에 
+			if ($('.quiz-step ol li').length > 11) {
+				var tabSlider = $('.quiz-step ol').bxSlider({
+					pager: false,
+					minSlides: 10,
+					maxSlides: 10,
+					moveSlides: 10,
+					slideWidth: 60,
+					infiniteLoop: false,
+					touchEnabled: false,
+					hideControlOnEnd: true
+				});
+			}
 		});
 	</script>
 </body>

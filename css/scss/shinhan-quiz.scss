@@ -4,8 +4,15 @@
 @import url(https://hunetdown.cdn.hunet.co.kr/Resources/HunetDev/HRD_DEV/Images/_assets/edu/css/nanumbg.css);
 
 /* base */
+//$masterColor: #ff6c00;
 $masterColor: #ff6c00;
 $primaryColor: #44535a;
+
+// 로컬경로
+$imgUrl: '/images/pc';
+
+// 실서버경로
+//$imgUrl: 'https://hunetdown.cdn.hunet.co.kr/Resources/HunetDev/HRD_DEV/Images/edu/customize/46945_shinhaneasy/';
 
 /* 반영시 지우기 :: 211025 */
 body {
@@ -135,15 +142,20 @@ main {
 	width: 100%;
 
 	background: {
-		image: url(../images/pc/quiz_bg.png);
+		image: url(#{$imgUrl}/quiz_bg.png);
 		repeat: repeat-y;
 		position: 0 0;
 	}
 
 	border-top: 1px solid #d7d7d7;
+	color: #222;
 
 	* {
 		font-family: 'NanumBarunGothic', sans-serif;
+	}
+
+	figure {
+		margin: 0;
 	}
 
 	/* title */
@@ -279,7 +291,7 @@ main {
 		height: 90px;
 
 		background: {
-			image: url(../images/pc/quiz_title.png);
+			image: url(#{$imgUrl}/quiz_title.png);
 			repeat: no-repeat;
 			position: 0 0
 		}
@@ -362,7 +374,6 @@ main {
 
 	}
 
-
 	/* quiz contents */
 	.quiz-inner {
 		width: 760px;
@@ -419,6 +430,8 @@ main {
 
 	.overview {
 		padding: 10px 30px 30px;
+		font-size: 14px;
+		line-height: 23px;
 	}
 
 	.modal {
@@ -528,43 +541,43 @@ main {
 		}
 
 		.prod_01 {
-			background-image: url(../images/pc/prod_item01.png);
+			background-image: url(#{$imgUrl}/prod_item01.png);
 		}
 
 		.prod_02 {
-			background-image: url(../images/pc/prod_item02.png);
+			background-image: url(#{$imgUrl}/prod_item02.png);
 		}
 
 		.prod_03 {
-			background-image: url(../images/pc/prod_item03.png);
+			background-image: url(#{$imgUrl}/prod_item03.png);
 		}
 
 		.prod_04 {
-			background-image: url(../images/pc/prod_item04.png);
+			background-image: url(#{$imgUrl}/prod_item04.png);
 		}
 
 		.prod_05 {
-			background-image: url(../images/pc/prod_item05.png);
+			background-image: url(#{$imgUrl}/prod_item05.png);
 		}
 
 		.prod_06 {
-			background-image: url(../images/pc/prod_item06.png);
+			background-image: url(#{$imgUrl}/prod_item06.png);
 		}
 
 		.prod_07 {
-			background-image: url(../images/pc/prod_item07.png);
+			background-image: url(#{$imgUrl}/prod_item07.png);
 		}
 
 		.prod_08 {
-			background-image: url(../images/pc/prod_item08.png);
+			background-image: url(#{$imgUrl}/prod_item08.png);
 		}
 
 		.prod_09 {
-			background-image: url(../images/pc/prod_item09.png);
+			background-image: url(#{$imgUrl}/prod_item09.png);
 		}
 
 		.prod_10 {
-			background-image: url(../images/pc/prod_item10.png);
+			background-image: url(#{$imgUrl}/prod_item10.png);
 		}
 
 	}
@@ -621,7 +634,7 @@ main {
 					content: '';
 
 					background: {
-						image: url(../images/pc/correct.png);
+						image: url(#{$imgUrl}/correct.png);
 						repeat: no-repeat;
 						position: 0 0;
 					}
@@ -662,7 +675,7 @@ main {
 					content: '';
 
 					background: {
-						image: url(../images/pc/incorrect.png);
+						image: url(#{$imgUrl}/incorrect.png);
 						repeat: no-repeat;
 						position: 0 0;
 					}
@@ -762,30 +775,32 @@ main {
 	@include clearfix;
 	width: 600px;
 	margin: 50px auto 0;
-
-	ol {
-		margin-bottom: 16px;
-		@include flex(space-between);
-	}
-
-	li {
-		flex-basis: 10%;
-		text-align: center;
+	
+	.quiz-paging {
+		@include clearfix;
+		margin-bottom: 18px;
+		text-align: right;
 
 		span {
-			display: block;
-			margin: 0 auto;
-			width: 34px;
-			height: 34px;
-			line-height: 31px;
+			position: relative;
+			padding: 0 6px;
 			font-size: 16px;
 			font-weight: bold;
+			color: #9e672b;
 			letter-spacing: -.5px;
-			color: #4b4a4a;
-			border-radius: 50%;
-			background: $white;
-			border: 3px solid #e6c140;
-			@include box-sizing(border-box);
+
+			&::before {
+				@include position($l: -3px, $t:0);
+				content: '/';
+			}
+
+			&:first-child {
+				&:before {
+					content: none;
+				}
+
+			}
+
 		}
 
 	}
@@ -807,11 +822,11 @@ main {
 		height: 19px;
 
 		span {
-			flex-basis: 10%;
+			//flex-basis: 10%;
 			width: 0;
 
 			&.complete {
-				width: 100%;
+				//width: 100%;
 				height: 100%;
 				background: #e6c140;
 				-webkit-transition: all .3s;
@@ -875,7 +890,7 @@ main {
 		height: 58px;
 
 		background: {
-			image: url(../images/pc/quiz_cont_bg.png);
+			image: url(#{$imgUrl}/quiz_cont_bg.png);
 			repeat: no-repeat;
 			position: 0 0;
 		}
@@ -884,7 +899,7 @@ main {
 
 	.form-inr {
 		position: relative;
-		padding: 15px 38px 100px;
+		padding: 35px 38px 100px;
 		z-index: 2;
 		background: linear-gradient(-40deg, #f9f9f9 50%, #fff 50%);
 
@@ -908,44 +923,58 @@ main {
 
 	}
 
-	.quiz-paging {
-		@include clearfix;
-		margin-bottom: 18px;
-		text-align: right;
-
-		span {
-			position: relative;
-			padding: 0 6px;
-			font-size: 16px;
-			font-weight: bold;
-			color: #9e672b;
-			letter-spacing: -.5px;
-
-			&::before {
-				@include position($l: -3px, $t:0);
-				content: '/';
-			}
-
-			&:first-child {
-				&:before {
-					content: none;
-				}
-
-			}
-
-		}
-
-	}
-
 	.ques-tit {
 		margin-bottom: 40px;
 		font-size: 19px;
 		font-weight: bold;
 		line-height: 28px;
 		letter-spacing: -.5px;
-		text-align: center;
+		text-align: left;
 		color: #4b4a4a;
 		word-break: keep-all;
+	}
+
+	.ques-num {
+		position: relative;
+		display: inline-block;
+		overflow: visible;
+
+		&.correct {
+			&::after{
+				@include position($t:50%,$l:50%);
+				content: '';
+				margin-top: -27px;
+				margin-left: -24px;
+				width: 48px;
+				height: 54px;
+				background: {
+					image : url(#{$imgUrl}/q_correct.png);
+					repeat: no-repeat;
+					position: 0 0;
+				}
+
+			}
+
+		}
+
+		&.in-correct {
+			&::after{
+				@include position($t:50%,$l:50%);
+				content: '';
+				margin-top: -25.5px;
+				margin-left: -20.5px;
+				width: 41px;
+				height: 51px;
+				background: {
+					image : url(#{$imgUrl}/q_incorrect.png);
+					repeat: no-repeat;
+					position: 0 0;
+				}
+				
+			}
+
+		}
+
 	}
 
 	input[type="radio"],
@@ -1039,11 +1068,11 @@ main {
 			cursor: pointer;
 
 			&.choice-o {
-				background-image: url(../images/pc/quiz_o.png);
+				background-image: url(#{$imgUrl}/quiz_o.png);
 			}
 
 			&.choice-x {
-				background-image: url(../images/pc/quiz_x.png);
+				background-image: url(#{$imgUrl}/quiz_x.png);
 			}
 
 		}
@@ -1144,17 +1173,17 @@ main {
 		}
 
 		&:before {
-			margin-top: -133.5px;
-			margin-left: -131px;
-			width: 262px;
-			height: 262px;
+			margin-top: -128.5px;
+			margin-left: -126px;
+			width: 252px;
+			height: 252px;
 		}
 
 		&:after{
-			margin-top: -101.5px;
-			margin-left: -99.5px;
-			width: 200px;
-			height: 200px;
+			margin-top: -107px;
+			margin-left: -105px;
+			width: 210px;
+			height: 210px;
 		}
 
 		figure {
@@ -1173,19 +1202,19 @@ main {
 		}
 
 		.result01 {
-			background-image: url(../images/pc/img_result01.png);
+			background-image: url(#{$imgUrl}/img_result01.png);
 		}
 		
 		.result02 {
-			background-image: url(../images/pc/img_result02.png);
+			background-image: url(#{$imgUrl}/img_result02.png);
 		}
 		
 		.result03 {
-			background-image: url(../images/pc/img_result03.png);
+			background-image: url(#{$imgUrl}/img_result03.png);
 		}
 		
 		.result04 {
-			background-image: url(../images/pc/img_result04.png);
+			background-image: url(#{$imgUrl}/img_result04.png);
 		}
 
 	}
@@ -1206,9 +1235,35 @@ main {
 /* 퀴즈 해설 */
 .q-commentary {
 	.quiz-step  {
+		position: relative; 
+		ol {
+			width: 100%;
+			@include flex(center);
+		}
+		
 		li {
 			position: relative;
+			@include flex;
+			width: 60px;
+			height: 60px;
 			margin-bottom: 20px;
+
+			span {
+				display: block;
+				margin: 0 auto;
+				width: 34px;
+				height: 34px;
+				line-height: 31px;
+				font-size: 16px;
+				font-weight: bold;
+				letter-spacing: -.5px;
+				color: #4b4a4a;
+				text-align: center;
+				border-radius: 50%;
+				background: $white;
+				border: 3px solid #e6c140;
+				@include box-sizing(border-box);
+			}
 			
 			&:before{
 				@include position($t:50%,$l:50%);
@@ -1227,7 +1282,7 @@ main {
 					margin-left: -24px;
 					width: 48px;
 					height: 54px;
-					background-image: url(../images/pc/q_correct.png);
+					background-image: url(#{$imgUrl}/q_correct.png);
 				}
 
 			}
@@ -1238,25 +1293,35 @@ main {
 					margin-left: -20.5px;
 					width: 41px;
 					height: 51px;
-					background-image: url(../images/pc/q_incorrect.png);
+					background-image: url(#{$imgUrl}/q_incorrect.png);
 				}
 
 			}
 
 		}
 
-		.bar-rate {
-			span {
-				width: 0;
+		.bx-controls-direction {
+			.bx-prev,
+			.bx-next {
+				@include position($t:50%);
+				width: 28px;
+				height: 31px;
+				margin-top: -15px;
+				background : {
+					repeat: no-repeat;
+					position: 0 0;
+				};
+				font-size: 0;
+			}
 
-				&.complete {
-					width:100%;
-					-webkit-transition: width 1s ease-in;
-					-moz-transition: width 1s ease-in;
-					-o-transition: width 1s ease-in;
-					transition: width 1s ease-in;
-				}
+			.bx-prev {
+				left: -40px;
+				background-image: url(#{$imgUrl}/q_page_prev.png);
+			}
 
+			.bx-next {
+				right: -40px;
+				background-image: url(#{$imgUrl}/q_page_next.png);
 			}
 
 		}
@@ -1276,18 +1341,18 @@ main {
 	}
 
 	.quiz-s-tit3 {
-		background-image: url(../images/pc/comment_tit01.png);
+		background-image: url(#{$imgUrl}/comment_tit01.png);
 	}
 
 	.quiz-s-tit4 {
-		background-image: url(../images/pc/comment_tit02.png);
+		background-image: url(#{$imgUrl}/comment_tit02.png);
 	}
 	
 	.quiz-form-wrap {
 		@include flex(space-between);
 		align-items: flex-start;
 		width: 100%;
-		margin: 80px auto 0;
+		margin: 60px auto 0;
 
 		&:before,
 		&:after {
@@ -1431,7 +1496,7 @@ main {
 				width: 28px;
 				height: 32px;
 				background : {
-					image: url(../images/pc/q_page_back.png);
+					image: url(#{$imgUrl}/q_page_back.png);
 					repeat: no-repeat;
 					position: 0 0
 				}
@@ -1477,12 +1542,12 @@ main {
 
 			.prev {
 				margin-right: 12px;
-				background-image: url(../images/pc/q_page_prev.png);
+				background-image: url(#{$imgUrl}/q_page_prev.png);
 			}
 
 			.next {
 				margin-left: 12px;
-				background-image: url(../images/pc/q_page_next.png);
+				background-image: url(#{$imgUrl}/q_page_next.png);
 			}
 
 		}

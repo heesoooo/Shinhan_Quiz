@@ -5,10 +5,13 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>C_K 퀴즈응시</title>
-	<link rel="stylesheet" href="../../css/shinhan-quiz.min.css">
+	<link rel="stylesheet" href="/css/shinhan-quiz.min.css">
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css"> -->
 
-<script src="../../js/jquery-1.8.3.min.js"></script>
-<script src="../../js/common.js"></script>
+
+<script src="/js/jquery-1.8.3.min.js"></script>
+<script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+<script src="/js/common.js"></script>
 </head>
 <body>
 	<!-- header -->
@@ -42,77 +45,29 @@
 					</h3>
 					<!-- quiz step -->
 					<div class="quiz-step">
-						<div class="col">
-							<ol>
-								<li data-tab="1"><span>1</span></li>
-								<li data-tab="2"><span>2</span></li>
-								<li data-tab="3"><span>3</span></li>
-								<li data-tab="4"><span>4</span></li>
-								<li data-tab="5"><span>5</span></li>
-								<li data-tab="6"><span>6</span></li>
-								<li data-tab="7"><span>7</span></li>
-								<li data-tab="8"><span>8</span></li>
-								<li data-tab="9"><span>9</span></li>
-								<li data-tab="10"><span>10</span></li>
-							</ol>
-							<div class="bar-bg">
-								<div class="bar-rate">
-									<span class="complete"></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
-								</div>
+						<!-- paging -->
+						<div class="quiz-paging">
+							<span class="current-idx">1</span>
+							<span class="total-idx">30</span>
+						</div>
+						<!-- /paging -->
+						
+						<!-- bar -->
+						<div class="bar-bg">
+							<div class="bar-rate">
+								<span class="complete" style="width: 10%"></span>
 							</div>
 						</div>
-						<div class="col">
-							<ol>
-								<li data-tab="11"><span>11</span></li>
-								<li data-tab="12"><span>12</span></li>
-								<li data-tab="13"><span>13</span></li>
-								<li data-tab="14"><span>14</span></li>
-								<li data-tab="15"><span>15</span></li>
-								<li data-tab="16"><span>16</span></li>
-								<li data-tab="17"><span>17</span></li>
-								<li data-tab="18"><span>18</span></li>
-								<li data-tab="19"><span>19</span></li>
-								<li data-tab="20"><span>20</span></li>
-							</ol>
-							<div class="bar-bg">
-								<div class="bar-rate">
-									<span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
-								</div>
-							</div>
-						</div>
-						<div class="col">
-							<ol>
-								<li data-tab="21"><span>21</span></li>
-								<li data-tab="22"><span>22</span></li>
-								<li data-tab="23"><span>23</span></li>
-								<li data-tab="24"><span>24</span></li>
-								<li data-tab="25"><span>25</span></li>
-								<li data-tab="26"><span>26</span></li>
-								<li data-tab="27"><span>27</span></li>
-								<li data-tab="28"><span>28</span></li>
-								<li data-tab="29"><span>29</span></li>
-								<li data-tab="30"><span>30</span></li>
-							</ol>
-							<div class="bar-bg">
-								<div class="bar-rate">
-									<span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
-								</div>
-							</div>
-						</div>
+						<!-- /bar -->
 					</div>
 					<!-- /quiz step -->
 					<div class="quiz-form-wrap">
 						<div class="quiz-form">
 							<h4 class="quiz-s-tit2">QUIZ</h4>
 							<div class="form-inr">
-								<!-- paging -->
-								<div class="quiz-paging">
-									<span class="current-idx">1</span>
-									<span class="total-idx">30</span>
-								</div>
-								<!-- /paging -->
 								<!-- tit -->
 								<h5 class="ques-tit">
+									<span class="ques-num">Q1.</span>
 									전기통신금융사기범죄에 대한 대응을 강화하기 위하여 대포통장 대여 등 행위에 대한 처벌을 강화하고, 범죄와 관련된 계좌정보의 사용 및 관리 등에 대한 처벌규정을 신설 하였습니다. 과연 이러한 내용은 어느 법령에서 정하고 있을까요?
 								</h5>
 								<!-- /tit -->
@@ -174,9 +129,8 @@
 				<!-- /inner -->
 			</div>
 			<!-- /Quiz -->
-
 		</div>
-		<!-- /contents -->	
+		<!-- /contents -->
 	</main>
 
 	<!-- footer -->
@@ -184,32 +138,5 @@
 		<img src="https://rebehayan3.cafe24.com/hunet/resource/img.hunet.co.kr/edu/customize/online-baeum/pc/@footer.png" alt="푸터">
 	</footer>
 	<!-- /footer -->
-
-	<script>
-		$(function(){
-			// quiz step click 시
-			$('.quiz-step li').on("click", function(e){
-				e.preventDefault();
-				var num = $(this).data('tab'),
-					bars = $(".bar-rate span");
-				//console.log(num);
-				bars.each(function (e){
-					for (i = 0; i <= bars.length; i++) {
-						$(bars[i]).removeClass("complete");
-					}
-	
-					for (i = 0; i <= num - 1; i++) {
-						$(bars[i]).addClass("complete");
-					}
-				});
-				
-				// var componentLength = $('.progress-container td').length - 1;
-				// var currentComponentLength = $('.bar-rate .complete').length;
-				// $('.progress-container .percentage').text(Math.floor((currentComponentLength / componentLength) * 100));
-				// $('.progress-container .number').text(currentComponentLength);
-				// $('.progress-container .max-number').text(componentLength);
-			});
-		});
-	</script>
 </body>
 </html>
