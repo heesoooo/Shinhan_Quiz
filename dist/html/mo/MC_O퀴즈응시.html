@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>MC_O퀴즈응시</title>
+	<link rel="stylesheet" href="../../css/shinhan-quiz-m.min.css">
+
+<script src="../../js/jquery-1.8.3.min.js"></script>
+<script src="../../js/common.js"></script>
+<script src="https://img.hunet.co.kr/_assets/edu/js/swiper-bundle.min.js"></script>
+</head>
+<body>
+	<header class="header white">
+		<h1>합리적인소비</h1>
+		<div class="align both">
+			<div>
+				<button class="btn-prev">
+					<span class="hide">이전</span>
+				</button>
+			</div>
+		</div>
+	</header>
+	<main class="quiz">
+ 		<!-- Quiz -->
+		<div class="quiz-module q-question">
+			<!-- inner -->
+			<div class="quiz-inner">
+				<!-- quiz step -->
+				<div class="quiz-step">
+					<!-- paging -->
+					<div class="quiz-paging">
+						<span class="current-idx">1</span>
+						<span class="total-idx">30</span>
+					</div>
+					<!-- /paging -->
+					
+					<!-- bar -->
+					<div class="bar-bg">
+						<div class="bar-rate">
+							<span class="complete" style="width: 10%"></span>
+						</div>
+					</div>
+					<!-- /bar -->
+				</div>
+				<!-- /quiz step -->
+				<div class="quiz-form-wrap">
+					<div class="quiz-form">
+						<h4 class="quiz-s-tit2">QUIZ</h4>
+						<div class="form-inr">
+							<!-- tit -->
+							<h5 class="ques-tit">
+								<span class="ques-num">Q1.</span>
+								전기통신금융사기범죄에 대한 대응을 강화하기 위하여 대포통장 대여 등 행위에 대한 처벌을 강화하고, 범죄와 관련된 계좌정보의 사용 및 관리 등에 대한 처벌규정을 신설 하였습니다. 과연 이러한 내용은 어느 법령에서 정하고 있을까요?
+							</h5>
+							<!-- /tit -->
+							
+							<!-- OX 퀴즈 -->
+							<ol class="ox-quiz">
+								<li>
+									<input id="exam-1" type="radio" name="quiz-02" value="exam-1" checked>
+									<label for="exam-1" class="choice-o">o</label>
+								</li>
+								<li>
+									<input id="exam-2" type="radio" name="quiz-02" value="exam-2">
+									<label for="exam-2" class="choice-x">x</label>
+								</li>
+							</ol>
+							<!-- /OX 퀴즈 -->
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- /inner -->
+		</div>
+		<!-- /Quiz -->
+	</main>
+
+	<!-- footer -->
+	<footer class="footer">
+	<div class="customer">
+		<h3>고객행복센터</h3>
+		<a href="tel:1588-6559">1588-6559</a>
+		<h3>학습상담</h3>
+		<ul>
+			<li>
+				<strong>평일</strong>
+				09:00 ~ 18:00
+			</li>
+			<li>
+				<strong>주말</strong>
+				09:00 ~ 18:00
+			</li>
+			<li>
+				<strong>점심시간</strong>
+				12:00 ~ 13:00
+			</li>
+		</ul>
+	</div>
+	<div class="footer">
+		<ul>
+			<li><a href="">개인정보처리방침</a></li>
+			<li><a href="">이용약관</a></li>
+		</ul>
+		<p class="copy">COPYRIGHT ⓒ 2021 신한 이지  ALL RIGHTS RESERVED.</p>
+	</div>
+</footer>
+
+	
+	<!-- 퀴즈중단팝업 -->
+	<div class="modal quiz-alert" id="quizRestart" aria-hidden="false">
+		<div class="modal-content">
+			<p>
+				퀴즈를 멈추시겠습니까?<br>
+				중단 시 처음부터 다시 시작해야해요!
+			</p>
+			<div class="btn-wrap">
+				<a href="#" class="modal-btn btn-default">네</a>
+				<a href="#" class="modal-btn btn-close" data-dismiss="modal">아니요</a>
+			</div>
+		</div>
+	</div>
+	<!-- /퀴즈중단팝업 -->
+
+	<script>
+		/* 다른페이지 이동시 팝업 */
+		$('#quizRestart').modal({ show: true });
+	</script>
+
+</body>
+</html>
