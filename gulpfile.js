@@ -66,7 +66,7 @@ function serve() {
 	browserSync.init({
 		server: {
 			baseDir: './',
-			index: "worksheet.html"
+			//index: "worksheet.html"
 		}
 	});	
 	watchTask();

@@ -96,7 +96,7 @@ function directoryTree (path, options, onEachFile, onEachDirectory) {
 // module.exports = directoryTree;
 
 // *** 연수원 사이트 경로 *** //
-const fileName = './worksheet.html';
+const fileName = './index.html';
 const stream = FS.createWriteStream(fileName);
 const tree = directoryTree('dist', {exclude:[/include/,/images/,/css/,/js/]});
 
@@ -131,7 +131,7 @@ function buildHtml() {
 	let body = '<ul class="tree">';
 	body += li;
 	body += '</ul>';
-	const footer = `<script src="http://code.jquery.com/jquery-3.4.1.min.js"></script><script>$(function(){$(".folder").prepend('<button type="button"class="btn-folder"></button>'),$(".btn-folder").click(function(){var e = $(this).parent().children("ul");e.is(":hidden") ? ($(this).removeClass("closed"),e.show()):($(this).addClass("closed"),e.hide())}),$(".toggle-expand").click(function(){$(this).hasClass("hide-all") ? ($(this).text("모두 접기"),$(this).removeClass("hide-all"),$(".btn-folder").removeClass("closed"),$(".btn-folder").parent().children("ul").show()):($(this).text("모두 펼치기"),$(this).addClass("hide-all"),$(".btn-folder").addClass("closed"),$(".btn-folder").parent().children("ul").hide())}),$("body").append('<a href="#"class="btn-top"><i class="caret-up"></i></a>'),$(window).scroll(function(e){$(window).scrollTop() > 300 ? $(".btn-top").show():$(".btn-top").hide()})});</script>`;
+	const footer = `<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script><script>$(function(){$(".folder").prepend('<button type="button"class="btn-folder"></button>'),$(".btn-folder").click(function(){var e = $(this).parent().children("ul");e.is(":hidden") ? ($(this).removeClass("closed"),e.show()):($(this).addClass("closed"),e.hide())}),$(".toggle-expand").click(function(){$(this).hasClass("hide-all") ? ($(this).text("모두 접기"),$(this).removeClass("hide-all"),$(".btn-folder").removeClass("closed"),$(".btn-folder").parent().children("ul").show()):($(this).text("모두 펼치기"),$(this).addClass("hide-all"),$(".btn-folder").addClass("closed"),$(".btn-folder").parent().children("ul").hide())}),$("body").append('<a href="#"class="btn-top"><i class="caret-up"></i></a>'),$(window).scroll(function(e){$(window).scrollTop() > 300 ? $(".btn-top").show():$(".btn-top").hide()})});</script>`;
   return '<!DOCTYPE html>' + '<html><head>' + header + '</head><body>' + bodyHeader + body + footer + '</body></html>';
 };
 
