@@ -98,7 +98,7 @@ function directoryTree (path, options, onEachFile, onEachDirectory) {
 // *** 연수원 사이트 경로 *** //
 const fileName = './worksheet.html';
 const stream = FS.createWriteStream(fileName);
-const tree = directoryTree('dist', {exclude:[/include/]});
+const tree = directoryTree('dist', {exclude:[/include/,/images/,/css/,/js/]});
 
 let li = '';
 function getEl(children) {
