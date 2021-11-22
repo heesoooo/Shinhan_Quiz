@@ -4,7 +4,7 @@
 /node_modules
 package-lock.json
 worksheet.html
+web.config
 
 # dist
 /dist
-web.config
