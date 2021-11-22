@@ -18,7 +18,7 @@ function clean() {
 }
 
 function cleanCss() {
-	return del([`${SRC.CSS}/*.min.css`]);
+	return del([`dist/css/*.min.css`]);
 }
 
 // .scss -> .css 압축 저장
