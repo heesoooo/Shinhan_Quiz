@@ -4,7 +4,7 @@ const gulp = require('gulp'),
 	cssnano = require('gulp-cssnano'),
 	rename = require('gulp-rename'),
 	fileinclude = require('gulp-file-include'),
-	connect = require('gulp-connect'),
+	//connect = require('gulp-connect'),
 	browserSync = require('browser-sync').create(),
 	reload = browserSync.reload;
 
